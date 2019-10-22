@@ -22,7 +22,7 @@
 		"grammars": [
 			{
 				"language": "gas-m68k",
-				"scopeName": "source.s",
+				"scopeName": "source.s.gas-m68k",
 				"path": "./gas-m68k.tmLanguage.json"
 			}
 		]

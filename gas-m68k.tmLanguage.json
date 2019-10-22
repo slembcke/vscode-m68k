@@ -1,25 +1,23 @@
 {
-	"scopeName": "source.s",
+	"scopeName": "source.s.gas-m68k",
 	"patterns": [{ "include": "#expression" }],
 	"repository": {
 		"expression": {
-			"patterns": [{ "include": "#letter" }, { "include": "#paren-expression" }]
+			"patterns": [
+				{"name": "comment.line.number-sign", "match": "^\\s*#.*"},
+				{"name": "comment.block", "match": "/\\*.*\\*/"},
+				{"name": "keyword", "match": "\\babcd(\\.b)?\\b"},
+				{"name": "keyword", "match": "\\badd(a|i|q|x)?(\\.(b|w|l))?\\b"},
+				{"name": "keyword", "match": "\\band(a|i|q|x)?(\\.(b|w|l))?\\b"},
+				{"name": "keyword", "match": "\\bmoveq?(\\.(b|w|l))?\\b"},
+				{"name": "constant.numeric", "match": "#?[0-9]+\\b"},
+				{"name": "constant.numeric", "match": "#?0[x][0-9A-F]+\\b"},
+				{"name": "variable.language", "match": "%[da][0-7]\\b"},
+				{"name": "variable.language", "match": "%(sp|fp)\\b"},
+				{"name": "variable", "match": "\\w+:"},
+				{}
+			]
 		},
-		"letter": {
-			"match": "a|b|c",
-			"name": "keyword.letter"
-		},
-		"paren-expression": {
-			"begin": "\\(",
-			"end": "\\)",
-			"beginCaptures": {
-				"0": { "name": "punctuation.paren.open" }
-			},
-			"endCaptures": {
-				"0": { "name": "punctuation.paren.close" }
-			},
-			"name": "expression.group",
-			"patterns": [{ "include": "#expression" }]
-		}
+		"":""
 	}
 }
